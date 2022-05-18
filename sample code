@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+  <div id="name">
+    </div>   
+  </body>
+</html>
+
+%%[
+SET @name = "Vikram"
+OutputLine(Concat("Name in Ampscript: ", @name))
+
+]%%
+
+<script runat="server">
+Platform.Load("Core","1");
+var name = Variable.GetValue("@name");
+Write("Name in SSJS: "+ name);
+</script>
+
+<script>
+const name = '<ctrl:var name="name"/>';
+document.getElementById("name").innerHTML = "Name in Client Side Java Script : "+ name;
+</script>
